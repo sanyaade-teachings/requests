@@ -42,7 +42,7 @@ def get_netrc_auth(url):
     for f in NETRC_FILES:
         try:
             locations.append(os.path.expanduser('~/%s' % (f,)))
-        except AttributeError:
+        except (AttributeError, ImportError):
             pass
     netrc_path = None
 
